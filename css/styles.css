@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Gulfs Display";
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.woff2') format('woff2');
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.woff') format('woff');
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: auto;
 }
@@ -5,8 +14,8 @@ body {
 .chat {
     position: fixed;
     height: 10vh;
-    width: 20vw;
-    border-radius: 50%;
+    width: 12vw;
+    border-radius: 100%;
     border: 1px solid black;
     bottom: 15px;
     right: 15px;
@@ -29,26 +38,132 @@ body {
     height: 100vh;
 }
 
-header button img {
-    height: 3.3vh;
-    position: absolute;
-
+#menu-toggle {
+    display: none;
 }
 
-.menu {
+#menu-toggle:not(:checked) ~ .contenido-menu {
+    display: none;
+}
+
+#menu-toggle:checked ~ .contenido-menu {
+    position: absolute;
+}
+
+.boton-menu {
     background-color: #FEB4CD;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    height: 7vh;
-    width: 14vw;
+    height: 8vh;
+    width: 9vw;
     border: 2px solid black;
     border-right: 5px solid black;
     border-bottom: 5px solid black;
-    border-radius: 55%;
+    border-radius: 100%;
     right: 3vw;
     top: 2vh;
+}
+
+#rayas-menu-nav {
+    height: 4vh;
+    width: 4vw;
+    position: absolute;
+}
+
+#cruz-menu-nav {
+    height: 5.5vh;
+    width: 5.5vw;
+    position: absolute;
+}
+
+.boton-menu:hover {
+    background-color: #ff83ac;
+    cursor: pointer;
+}
+
+#menu-toggle:checked + .boton-menu #rayas-menu-nav{
+    background-color: #ff83ac;
+    display: none;
+}
+
+#menu-toggle:not(:checked) + .boton-menu #cruz-menu-nav{
+    display: none;
+}
+
+#menu-toggle:checked .contenido-menu {
+    position: absolute;
+}
+
+.contenido-menu {
+    top: 13vh;
+    right: 18vw;
+}
+
+.lista-navegacion {
+    list-style: none;
+}
+
+.lista-navegacion li {
+    position: relative;
+    padding-left: 1vw;
+}
+
+
+#primer-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 105%; /* Align to the left */
+    top: 0; /* Align to the top */
+    width: 28px; /* Set the width of the image */
+    height: 28px; /* Set the height of the image */
+    background-image: url('../img/heart.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+#segundo-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 77%; /* Align to the left */
+    top: -10%; /* Align to the top */
+    width: 60px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('../img/estrella.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+#tercer-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 79%; /* Align to the left */
+    top: -10%; /* Align to the top */
+    width: 60px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('../img/figura.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+#cuarto-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 80%; /* Align to the left */
+    top: -15%; /* Align to the top */
+    width: 60px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('../img/polvora.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+li {
+    margin: 5%;
+    font-family: "Gulfs Display";
+    font-size: 1.2rem;
+    letter-spacing: 0.12rem;
 }
 
 
@@ -61,8 +176,3 @@ header button img {
     background-color:#FF6541;
     height: 30vh;
 }
-
-header .menu img:hover {
-    transition: height 0.05s ease;
-    height: 3.8vh; 
-} 

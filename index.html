@@ -10,11 +10,19 @@
     <title>Captura de Emociones</title>
 </head>
 <body>
-    <header>
-        <button class="menu">
-            <img src="./img/menu-burger.svg" alt="Rayas menu">
-        </button>
-    </header>
+    <input type="checkbox" id="menu-toggle" class="menu">
+    <label for="menu-toggle" class="boton-menu">
+        <img id="rayas-menu-nav" src="./img/menu-burger.svg" alt="Menu">
+        <img src="./img/x.svg" alt="Cruz menu" id="cruz-menu-nav">
+    </label>
+    <div class="contenido-menu">
+        <ol class="lista-navegacion">
+            <li id="primer-item">NOSOTROS</li>
+            <li id="segundo-item">GALERIA</li>
+            <li id="tercer-item">PRECIOS</li>
+            <li id="cuarto-item">CONTACTO</li>
+        </ol>
+    </div>    
     <div class="chat">CHAT</div>
     <section class="inicial-arriba">
 
