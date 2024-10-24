@@ -27,6 +27,11 @@ body {
     background-color: #FFF35F;
 }
 
+.chat:hover {
+    cursor: pointer;
+    background-color: #ffee32;
+}
+
 .inicial-arriba {
     background-color: #FEB4CD;
     height: 50vh;
@@ -43,11 +48,17 @@ body {
 }
 
 #menu-toggle:not(:checked) ~ .contenido-menu {
-    display: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.contenido-menu {
+    transition: opacity 0.4s ease-in;
 }
 
 #menu-toggle:checked ~ .contenido-menu {
     position: absolute;
+    opacity: 1;
 }
 
 .boton-menu {
@@ -64,6 +75,12 @@ body {
     border-radius: 100%;
     right: 3vw;
     top: 2vh;
+    transition: 150ms ease;
+}
+
+.contenido-menu a {
+    color: inherit;
+    text-decoration: none;
 }
 
 #rayas-menu-nav {
@@ -83,8 +100,12 @@ body {
     cursor: pointer;
 }
 
-#menu-toggle:checked + .boton-menu #rayas-menu-nav{
+#menu-toggle:checked + .boton-menu {
     background-color: #ff83ac;
+    scale: 1.09;
+}
+
+#menu-toggle:checked + .boton-menu #rayas-menu-nav{
     display: none;
 }
 
@@ -121,42 +142,62 @@ body {
     background-image: url('../img/heart.svg'); /* Image for first item */
     background-size: contain; /* Resize to fit */
     background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#primer-item:hover::before {
+    transform: rotate(360deg);
 }
 
 #segundo-item::before {
     content: ''; /* Required for the pseudo-element */
     position: absolute; /* Position it absolutely */
-    right: 77%; /* Align to the left */
+    right: 103%; /* Align to the left */
     top: -10%; /* Align to the top */
-    width: 60px; /* Set the width of the image */
+    width: 30px; /* Set the width of the image */
     height: 30px; /* Set the height of the image */
     background-image: url('../img/estrella.svg'); /* Image for first item */
     background-size: contain; /* Resize to fit */
     background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#segundo-item:hover::before {
+    transform: rotate(360deg);
 }
 
 #tercer-item::before {
     content: ''; /* Required for the pseudo-element */
     position: absolute; /* Position it absolutely */
-    right: 79%; /* Align to the left */
+    right: 103%; /* Align to the left */
     top: -10%; /* Align to the top */
-    width: 60px; /* Set the width of the image */
+    width: 30px; /* Set the width of the image */
     height: 30px; /* Set the height of the image */
     background-image: url('../img/figura.svg'); /* Image for first item */
     background-size: contain; /* Resize to fit */
     background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.8s ease;
+}
+
+#tercer-item:hover::before {
+    transform: rotate(360deg)
 }
 
 #cuarto-item::before {
     content: ''; /* Required for the pseudo-element */
     position: absolute; /* Position it absolutely */
-    right: 80%; /* Align to the left */
+    right: 104%; /* Align to the left */
     top: -15%; /* Align to the top */
-    width: 60px; /* Set the width of the image */
+    width: 30px; /* Set the width of the image */
     height: 30px; /* Set the height of the image */
     background-image: url('../img/polvora.svg'); /* Image for first item */
     background-size: contain; /* Resize to fit */
     background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.8s ease;
+}
+
+#cuarto-item:hover::before {
+    transform: rotate(360deg)
 }
 
 li {
