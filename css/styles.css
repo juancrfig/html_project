@@ -244,14 +244,14 @@ span {
     z-index: 1;
     border: 1.5px solid black;
     overflow: hidden;
-    border-radius: 40%;
-    height: fit-content;
-    width: fit-content;
+    border-radius: 42%;
+    display: flex;
 }
 
 #imagen-principal {
     height: 50vh;
     width: 70vw;
+    border-bottom: 1.5px solid black;    
 }
 
 #rayo-celeste {
